@@ -2,9 +2,9 @@
 </script>
 
 <template>
-  <h1 class="text-5xl text-red-400">
-    Heelo world
-  </h1>
+  <div>
+    <router-view/>
+  </div>
 </template>
 
 <style scoped>
