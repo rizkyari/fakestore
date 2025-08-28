@@ -1,5 +1,9 @@
 <template>
     <div>
-        This will be Product page
+        <Products/>
     </div>
 </template>
+
+<script setup lang="ts">
+import Products from '@/components/features/products/Products.vue';
+</script>
