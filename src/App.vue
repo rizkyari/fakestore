@@ -2,7 +2,7 @@
   <div class="min-h-screen flex flex-col">
     <Header v-if="!hideLayout" />
     
-    <main class="flex-1 container mx-auto px-4 py-6">
+    <main class="flex-1 container mx-auto max-w-7xl px-4 py-7 sm:px-6 lg:px-8">
       <router-view/>
     </main>
 

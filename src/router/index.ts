@@ -3,6 +3,7 @@ import { useAuthStore } from "@/stores/auth";
 
 const Login = () => import('@/pages/Login.vue')
 const Products = () => import('@/pages/Products.vue')
+const ProductDetail = () => import('@/pages/ProductDetail.vue')
 const Cart = () => import('@/pages/Cart.vue')
 
 const router = createRouter({
@@ -11,6 +12,7 @@ const router = createRouter({
         { path: '/', redirect: '/products'},
         { path: '/login', component: Login},
         { path: '/products', component: Products},
+        { path: '/product/:id', component: ProductDetail},
         { path: '/cart', component: Cart},
     ],
     scrollBehavior() {
