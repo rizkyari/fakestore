@@ -1,0 +1,29 @@
+{
+    "nav" : {
+        "products": "Products",
+        "cart": "Cart",
+        "language": "Language"
+    },
+    "auth" : {
+        "login": "Login",
+        "logout": "Logout",
+        "username": "Username",
+        "password": "Password",
+        "usernamePlaceholder": "Your username",
+        "passwordPlaceholder": "Your password"
+    },
+    "process": {
+        "loading": "Please wait..."
+    },
+    "lang": {
+        "en": "English",
+        "id": "Indonesian"
+    },
+    "copyright": {
+        "copyright": "Copyright",
+        "desc": "All rights reserved."
+    },
+    "common": {
+        "your": "Your"
+    }
+}
