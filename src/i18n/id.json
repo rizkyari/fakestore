@@ -1,0 +1,29 @@
+{
+    "nav" : {
+        "products": "Produk",
+        "cart": "Keranjang",
+        "language": "Bahasa"
+    },
+    "auth" : {
+        "login": "Masuk",
+        "logout": "Keluar",
+        "username": "Nama pengguna",
+        "Password": "Kata sandi",
+        "usernamePlaceholder": "Nama pengguna anda",
+        "passwordPlaceholder": "Kata sandi anda"
+    },
+    "process": {
+        "loading": "Silahkan tunggu..."
+    },
+    "lang": {
+        "en": "Inggris",
+        "id": "Indonesia"
+    },
+    "copyright": {
+        "copyright": "Hak cipta",
+        "desc": "Semua hak dilindungi undang-undang."
+    },
+    "common": {
+        "your": "Anda"
+    }
+}
