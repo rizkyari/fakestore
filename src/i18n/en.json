@@ -13,7 +13,8 @@
         "passwordPlaceholder": "Your password"
     },
     "process": {
-        "loading": "Please wait..."
+        "loading": "Please wait...",
+        "tryAgain": "Try again"
     },
     "lang": {
         "en": "English",
@@ -24,6 +25,24 @@
         "desc": "All rights reserved."
     },
     "common": {
-        "your": "Your"
+        "yourCart": "Your cart",
+        "isEmpty": "is empty",
+        "browseProduct": "Browse products",
+        "remove": "Remove",
+        "total": "Total",
+        "clear":"Clear",
+        "checkout": "Checkout",
+        "backToProduct": "Back to products",
+        "category": "Category",
+        "sort": "Sort",
+        "all": "All",
+        "relevance": "Relevance",
+        "price": "Price",
+        "title": "Title",
+        "search": "Search",
+        "searchProducts": "Search products...",
+        "addToCart": "Add to cart",
+        "emptyProducts": "No product found.",
+        "added": "Added to cart"
     }
 }
