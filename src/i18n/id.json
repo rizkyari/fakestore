@@ -24,7 +24,18 @@
         "copyright": "Hak cipta",
         "desc": "Semua hak dilindungi undang-undang."
     },
+    "notFound": {
+        "title": "Halaman tidak ditemukan",
+        "desc": "Halaman yang Anda cari tidak ada atau sudah dipindahkan.",
+        "backToProducts": "Kembali ke Produk"
+    },
+    "checkout": {
+        "successTitle": "Checkout berhasil",
+        "successDesc": "Terima kasih! Pesanan Anda telah dibuat."
+    },
     "common": {
+        "ok": "OK",
+        "cancel": "Batal",
         "yourCart": "Keranjang  anda",
         "isEmpty": "masih kosong",
         "browseProduct": "Cari produk",

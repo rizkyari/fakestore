@@ -5,6 +5,7 @@ const Login = () => import('@/pages/Login.vue')
 const Products = () => import('@/pages/Products.vue')
 const ProductDetail = () => import('@/pages/ProductDetail.vue')
 const Cart = () => import('@/pages/Cart.vue')
+const NotFound = () => import('@/pages/NotFound.vue')
 
 const router = createRouter({
     history: createWebHistory(),
@@ -14,6 +15,7 @@ const router = createRouter({
         { path: '/products', component: Products},
         { path: '/product/:id', component: ProductDetail},
         { path: '/cart', component: Cart},
+        { path: '/:pathMatch(.*)*', component: NotFound}
     ],
     scrollBehavior() {
         return { top: 0 }
