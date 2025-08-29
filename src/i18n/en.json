@@ -24,7 +24,18 @@
         "copyright": "Copyright",
         "desc": "All rights reserved."
     },
+    "notFound": {
+        "title": "Page not found",
+        "desc": "The page you’re looking for doesn’t exist or has moved.",
+        "backToProducts": "Back to Products"
+    },
+    "checkout": {
+        "successTitle": "Checkout successful",
+        "successDesc": "Thank you! Your order has been placed."
+    },
     "common": {
+        "ok": "OK",
+        "cancel": "Cancel",
         "yourCart": "Your cart",
         "isEmpty": "is empty",
         "browseProduct": "Browse products",

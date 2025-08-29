@@ -41,35 +41,67 @@
 
       <div class="flex justify-end gap-3">
         <BaseButton class="bg-gray-200 text-gray-800 hover:bg-gray-300" @click="clear">{{ t('common.clear') }}</BaseButton>
-        <BaseButton @click="() => console.log('Checkout simulated')">{{ t('common.checkout') }}</BaseButton>
+        <BaseButton @click="onCheckout">{{ t('common.checkout') }}</BaseButton>
       </div>
     </div>
+    <Modal
+    :open="showSuccess"
+    :title="t('checkout.successTitle')"
+    :message="t('checkout.successDesc')"
+    :confirmText="t('common.ok')"
+    :cancelText="t('common.cancel')"
+    hideCancel
+    @confirm="onCheckoutConfirmed"
+    @cancel="onCheckoutCanceled"
+    />
   </section>
 </template>
 
 <script setup lang="ts">
-import { computed } from "vue";
+import { computed, ref } from "vue";
+import { useRouter } from "vue-router";
 import { useCartStore } from "@/stores/cart";
 import { useI18n } from 'vue-i18n';
+
+import Modal from "../ui/Modal.vue";
 import BaseButton from "@/components/ui/BaseButton.vue";
 
 const cart = useCartStore();
 const { t } = useI18n();
+const router = useRouter();
 const items = computed(() => cart.items);
 const total = computed(() => cart.total);
+const showSuccess = ref(false);
 
 function inc(id: number) {
   const it = cart.items.find(i => i.id === id);
   if (it) cart.setQty(id, it.qty + 1);
 }
+
 function dec(id: number) {
   const it = cart.items.find(i => i.id === id);
   if (it) cart.setQty(id, it.qty - 1);
 }
+
 function remove(id: number) {
   cart.remove(id);
 }
+
 function clear() {
   cart.clear();
+}
+
+function onCheckout() {
+  showSuccess.value = true;
+}
+
+function onCheckoutConfirmed() {
+  cart.clear();
+  showSuccess.value = false;
+  router.push("/products");
+}
+
+function onCheckoutCanceled() {
+  showSuccess.value = false;
 }
 </script>

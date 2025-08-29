@@ -1,26 +1,26 @@
 <template>
-    <header class="bg-white border-b">
+    <header class="sticky top-0 z-40 bg-white/80 backdrop-blur border-b">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="flex h-14 items-center justify-between">
-                <div class="flex items-center">
-                    <RouterLink to="/" class="flex items-center gap-2 font-semibold">
-                        <span class="text-lg">Fakestore</span>
-                    </RouterLink>
-                </div>
+                <RouterLink to="/" class="flex items-center gap-2 font-semibold">
+                    <span class="text-lg">Fakestore</span>
+                </RouterLink>
                 
 
                 <nav class="hidden md:flex items-center gap-6">
                     <div class="flex items-center gap-2 ml-5">
-                        <label for="lang" class="text-sm">{{ t('nav.language') }}</label>
-                        <select
-                        id="lang"
-                        class="rounded-xl cursor-pointer border px-2 py-1 text-sm bg-white"
-                        :value="locale"
-                        @change="onChangeLang"
-                        >
-                            <option value="en">{{ t('lang.en') }}</option>
-                            <option value="id">{{ t('lang.id') }}</option>
-                        </select>
+                        <label for="lang" class="text-sm text-gray-600">{{ t('nav.language') }}</label>
+                        <div class="inline-flex rounded-full border bg-white overflow-hidden">
+                            <select
+                            id="lang"
+                            class="cursor-pointer text-sm px-3 py-1.5 bg-transparent outline-none"
+                            :value="locale"
+                            @change="onChangeLang"
+                            >
+                                <option value="en">{{ t('lang.en') }}</option>
+                                <option value="id">{{ t('lang.id') }}</option>
+                            </select>
+                        </div>
                     </div>
                     <RouterLink to="/products" :class="[baseLink, route.path.startsWith('/products') ? activeClass : '']">
                         {{ t('nav.products') }}
