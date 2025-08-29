@@ -4,31 +4,31 @@
       <div class="flex-1 max-w-lg">
         <BaseInput
           id="search"
-          label="Search"
-          placeholder="Search products…"
+          :label=" t('common.search')"
+          :placeholder=" t('common.searchProducts')"
           v-model="ui.q"
         />
       </div>
 
       <div class="flex flex-col sm:flex-row gap-3">
         <div>
-          <label class="block text-sm text-gray-700 mb-1">Category</label>
+          <label class="block text-sm text-gray-700 mb-1">{{ t('common.category') }}</label>
           <select v-model="ui.category"
             class="rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-rose-200">
-            <option value="all">All</option>
+            <option value="all">{{ t('common.all') }}</option>
             <option v-for="c in products.categories" :key="c" :value="c">{{ c }}</option>
           </select>
         </div>
 
         <div>
-          <label class="block text-sm text-gray-700 mb-1">Sort</label>
+          <label class="block text-sm text-gray-700 mb-1">{{ t('common.sort') }}</label>
           <select v-model="ui.sort"
             class="rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-rose-200">
-            <option value="relevance">Relevance</option>
-            <option value="price-asc">Price &uarr;</option>
-            <option value="price-desc">Price &darr;</option>
-            <option value="title-asc">Title A-Z</option>
-            <option value="title-desc">Title Z-A</option>
+            <option value="relevance">{{ t('common.relevance') }}</option>
+            <option value="price-asc">{{ t('common.price') }} &uarr;</option>
+            <option value="price-desc">{{ t('common.price') }} &darr;</option>
+            <option value="title-asc">{{ t('common.title') }} A-Z</option>
+            <option value="title-desc">{{ t('common.title') }} Z-A</option>
           </select>
         </div>
         
@@ -41,10 +41,10 @@
 
     <div v-else-if="products.error" class="bg-rose-50 border border-rose-200 text-rose-700 rounded p-4">
       {{ products.error }}
-      <BaseButton class="ml-3" @click="products.fetchProducts()">Try again</BaseButton>
+      <BaseButton class="ml-3" @click="products.fetchProducts()">{{ t('process.tryAgain') }}</BaseButton>
     </div>
 
-    <div v-else-if="products.isEmpty" class="text-gray-600">No products found.</div>
+    <div v-else-if="products.isEmpty" class="text-gray-600">{{ t('common.emptyProducts') }}</div>
 
     <div v-else class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
       <ProductCard v-for="p in filtered" :key="p.id" :product="p" />
@@ -55,11 +55,13 @@
 <script setup lang="ts">
 import { onMounted, reactive, computed } from "vue";
 import { useProductStore } from "@/stores/product";
+import { useI18n } from 'vue-i18n';
 import ProductCard from "./ProductCard.vue";
 import BaseInput from "@/components/ui/BaseInput.vue";
 import BaseButton from "@/components/ui/BaseButton.vue";
 
 const products = useProductStore();
+const { t } = useI18n();
 
 const ui = reactive({
   q: "",

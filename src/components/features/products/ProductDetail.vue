@@ -4,7 +4,7 @@
       @click="goBack"
       class="cursor-pointer text-sm text-gray-600 hover:text-rose-600 inline-flex items-center gap-1"
     >
-     <- Back to Products
+     <- {{ t('common.backToProduct') }}
     </button>
 
     <div v-if="product.loading" class="grid gap-6 md:grid-cols-2 rounded-lg border p-5">
@@ -27,6 +27,10 @@
         <p v-if="product.current?.rating" class="text-sm text-gray-500 flex items-center">
           <img :src="Star" class="h-4 w-4 mr-2"/> {{ product.current?.rating.rate }}/5 ({{ product.current?.rating.count }})
         </p>
+
+        <BaseButton class="mt-5" @click="addCurrentToCart">
+          {{ t('common.addToCart') }}
+        </BaseButton>
       </div>
     </div>
   </section>
@@ -36,17 +40,28 @@
 import { onMounted } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { useProductStore } from "@/stores/product";
+import { useCartStore } from "@/stores/cart";
+import { useI18n } from 'vue-i18n';
+
+import BaseButton from "@/components/ui/BaseButton.vue";
 import Star from "@/assets/icons/star.svg"
 
 const route = useRoute();
 const router = useRouter();
 const product = useProductStore();
+const cart = useCartStore();
+const { t } = useI18n()
 
 onMounted(() => {
     product.fetchProductById(route.params.id as string);
 });
 
 function goBack() {
-    router.push("/products");
+  router.push("/products");
+}
+
+function addCurrentToCart() {
+  const p = product.current!;
+  cart.add({ id: p.id, title: p.title, price: p.price, image: p.image }, 1);
 }
 </script>

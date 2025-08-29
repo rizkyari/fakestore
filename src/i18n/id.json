@@ -8,12 +8,13 @@
         "login": "Masuk",
         "logout": "Keluar",
         "username": "Nama pengguna",
-        "Password": "Kata sandi",
+        "password": "Kata sandi",
         "usernamePlaceholder": "Nama pengguna anda",
         "passwordPlaceholder": "Kata sandi anda"
     },
     "process": {
-        "loading": "Silahkan tunggu..."
+        "loading": "Silahkan tunggu...",
+        "tryAgain": "Coba lagi"
     },
     "lang": {
         "en": "Inggris",
@@ -24,6 +25,24 @@
         "desc": "Semua hak dilindungi undang-undang."
     },
     "common": {
-        "your": "Anda"
+        "yourCart": "Keranjang  anda",
+        "isEmpty": "masih kosong",
+        "browseProduct": "Cari produk",
+        "remove": "Hapus",
+        "total": "Jumlah",
+        "clear":"Kosongkan keranjang",
+        "checkout": "Bayar",
+        "backToProduct": "Kembali ke produk",
+        "category": "Kategori",
+        "sort": "Sortir",
+        "all": "Semua",
+        "relevance": "Relevansi",
+        "price": "Harga",
+        "title": "Judul",
+        "search": "Cari",
+        "searchProducts": "Cari produk...",
+        "addToCart": "Tambah ke keranjang",
+        "emptyProducts": "Tidak ada produk ditemukan.",
+        "added": "Ditambahkan ke keranjang"
     }
 }

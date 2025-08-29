@@ -25,13 +25,16 @@
                     <RouterLink to="/products" :class="[baseLink, route.path.startsWith('/products') ? activeClass : '']">
                         {{ t('nav.products') }}
                     </RouterLink>
-                    <RouterLink to="/cart" :class="[baseLink, route.path.startsWith('/cart') ? activeClass : '']">
+                    <RouterLink to="/cart" class="relative" :class="[baseLink, route.path.startsWith('/cart') ? activeClass : '']">
                         {{ t('nav.cart') }}
+                        <span v-if="cart.count" class="ml-1 inline-flex items-center justify-center text-xs bg-rose-600 text-white rounded-full w-5 h-5 align-middle">
+                            {{ cart.count }}
+                        </span>
                     </RouterLink>
                     <button
                     v-if="isAuthenticated"
                     @click="onLogout"
-                    class="text-sm text-gray-700 hover:text-rose-600"
+                    class="text-sm text-gray-700 hover:text-rose-600 cursor-pointer"
                     >
                         {{ t('auth.logout') }}
                     </button>
@@ -71,7 +74,7 @@
                     route.path.startsWith('/products') ? 'bg-rose-50 text-rose-700' : 'hover:bg-gray-100'
                 ]"
                 >
-                    Products
+                    {{ t('nav.products') }}
                 </RouterLink>
 
                 <RouterLink
@@ -82,7 +85,10 @@
                     route.path.startsWith('/cart') ? 'bg-rose-50 text-rose-700' : 'hover:bg-gray-100'
                 ]"
                 >
-                    Cart
+                    {{ t('nav.cart') }}
+                    <span v-if="cart.count" class="ml-1 inline-flex items-center justify-center text-xs bg-rose-600 text-white rounded-full w-5 h-5 align-middle">
+                        {{ cart.count }}
+                    </span>
                 </RouterLink>
 
                 <div class="flex items-center gap-2 px-3 py-2">
@@ -103,7 +109,7 @@
                 @click="onLogout"
                 class="block w-full text-left rounded px-3 py-2 hover:bg-gray-100"
                 >
-                    Logout
+                    {{ t('auth.logout') }}
                 </button>
 
                 <RouterLink
@@ -127,6 +133,7 @@ import { useRouter, useRoute } from 'vue-router';
 import { storeToRefs } from 'pinia';
 import { useI18n } from 'vue-i18n';
 import { setLocale } from '@/i18n';
+import { useCartStore } from '@/stores/cart';
 
 import Menu from '@/assets/icons/menu.svg';
 import Close from '@/assets/icons/close.svg';
@@ -134,6 +141,7 @@ import Close from '@/assets/icons/close.svg';
 const auth = useAuthStore();
 const router = useRouter();
 const route = useRoute();
+const cart = useCartStore();
 const { isAuthenticated } = storeToRefs(auth);
 const { t, locale } = useI18n()
 const mobileOpen = ref(false);
