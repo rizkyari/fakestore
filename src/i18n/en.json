@@ -1,0 +1,48 @@
+{
+    "nav" : {
+        "products": "Products",
+        "cart": "Cart",
+        "language": "Language"
+    },
+    "auth" : {
+        "login": "Login",
+        "logout": "Logout",
+        "username": "Username",
+        "password": "Password",
+        "usernamePlaceholder": "Your username",
+        "passwordPlaceholder": "Your password"
+    },
+    "process": {
+        "loading": "Please wait...",
+        "tryAgain": "Try again"
+    },
+    "lang": {
+        "en": "English",
+        "id": "Indonesian"
+    },
+    "copyright": {
+        "copyright": "Copyright",
+        "desc": "All rights reserved."
+    },
+    "common": {
+        "yourCart": "Your cart",
+        "isEmpty": "is empty",
+        "browseProduct": "Browse products",
+        "remove": "Remove",
+        "total": "Total",
+        "clear":"Clear",
+        "checkout": "Checkout",
+        "backToProduct": "Back to products",
+        "category": "Category",
+        "sort": "Sort",
+        "all": "All",
+        "relevance": "Relevance",
+        "price": "Price",
+        "title": "Title",
+        "search": "Search",
+        "searchProducts": "Search products...",
+        "addToCart": "Add to cart",
+        "emptyProducts": "No product found.",
+        "added": "Added to cart"
+    }
+}

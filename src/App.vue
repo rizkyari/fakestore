@@ -1,11 +1,24 @@
-<script setup lang="ts">
-</script>
-
 <template>
-  <h1 class="text-5xl text-red-400">
-    Heelo world
-  </h1>
+  <div class="min-h-screen flex flex-col">
+    <Header v-if="!hideLayout" />
+    
+    <main class="flex-1 container mx-auto max-w-7xl px-4 py-7 sm:px-6 lg:px-8">
+      <router-view/>
+    </main>
+
+    <Footer v-if="!hideLayout" />
+  </div>
 </template>
+
+<script setup lang="ts">
+import { computed } from "vue";
+import { useRoute } from 'vue-router';
+import Header from './components/layouts/Header.vue';
+import Footer from './components/layouts/Footer.vue';
+
+const route = useRoute();
+const hideLayout = computed(() => route.path === "/login");
+</script>
 
 <style scoped>
 </style>
